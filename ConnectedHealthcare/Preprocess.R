@@ -38,23 +38,29 @@ sub_leftside$timestamp <- (sub_leftside$timestamp -mt)
 mt <- min(sub_rightside$timestamp)
 sub_rightside$timestamp <- (sub_rightside$timestamp -mt)
 
-sensor_name <- "Gravity"
-plot(sub_sitting_straight$x[sub_sitting_straight$sensorName == sensor_name], ylab = paste(sensor_name, "X", sep= " "), ylim = c(-1, 2))
+sensor_name <- "3-axis Accelerometer"
+plot(sub_sitting_straight$x[sub_sitting_straight$sensorName == sensor_name], ylab = paste(sensor_name, "X", sep= " "), ylim = c(-10, 10))
 lines(sub_sitting_forward$x[sub_sitting_forward$sensorName == sensor_name], type='l', col="red")
-lines(sub_sitting_forward$x[sub_sitting_backwards$sensorName == sensor_name], type='l', col="blue")
-legend("topleft", c("straight", "forward", "backward"), col = c("black", "red", "blue"), lty = 1, cex = 0.8)
+lines(sub_sitting_backwards$x[sub_sitting_backwards$sensorName == sensor_name], type='l', col="blue")
+lines(sub_leftside$x[sub_leftside$sensorName == sensor_name], type='l', col="green")
+lines(sub_rightside$x[sub_rightside$sensorName == sensor_name], type='l', col="yellow")
+legend("topleft", c("straight", "forward", "backward", "leftside", "rightside"), col = c("black", "red", "blue", "green", "yellow"), lty = 1, cex = 0.8)
 
 
-plot(sub_sitting_straight$y[sub_sitting_straight$sensorName == sensor_name], ylab = paste(sensor_name, "Y", sep= " "), ylim = c(-3, 12))
+plot(sub_sitting_straight$y[sub_sitting_straight$sensorName == sensor_name], ylab = paste(sensor_name, "Y", sep= " "), ylim = c(-20, 20))
 lines(sub_sitting_forward$y[sub_sitting_forward$sensorName == sensor_name], type='l', col="red")
-lines(sub_sitting_forward$y[sub_sitting_backwards$sensorName == sensor_name], type='l', col="blue")
-legend("topleft", c("straight", "forward", "backward"), col = c("black", "red", "blue"), lty = 1, cex = 0.8)
+lines(sub_sitting_backwards$y[sub_sitting_backwards$sensorName == sensor_name], type='l', col="blue")
+lines(sub_leftside$x[sub_leftside$sensorName == sensor_name], type='l', col="green")
+lines(sub_rightside$x[sub_rightside$sensorName == sensor_name], type='l', col="yellow")
+legend("topleft", c("straight", "forward", "backward", "leftside", "rightside"), col = c("black", "red", "blue", "green", "yellow"), lty = 1, cex = 0.8)
 
 
 plot(sub_sitting_straight$z[sub_sitting_straight$sensorName == sensor_name], ylab = paste(sensor_name, "Z", sep= " "), ylim = c(-10, 10))
 lines(sub_sitting_forward$z[sub_sitting_forward$sensorName == sensor_name], type='l', col="red")
-lines(sub_sitting_forward$z[sub_sitting_backwards$sensorName == sensor_name], type='l', col="blue")
-legend("topleft", c("straight", "forward", "backward"), col = c("black", "red", "blue"), lty = 1, cex = 0.8)
+lines(sub_sitting_backwards$z[sub_sitting_backwards$sensorName == sensor_name], type='l', col="blue")
+lines(sub_leftside$x[sub_leftside$sensorName == sensor_name], type='l', col="green")
+lines(sub_rightside$x[sub_rightside$sensorName == sensor_name], type='l', col="yellow")
+legend("topleft", c("straight", "forward", "backward", "leftside", "rightside"), col = c("black", "red", "blue", "green", "yellow"), lty = 1, cex = 0.8)
 
 
 
